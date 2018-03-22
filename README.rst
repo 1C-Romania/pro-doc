@@ -98,7 +98,7 @@ For apache something like this:
 .. _gitflow: https://git-scm.com/book/en/v2/Distributed-Git-Distributed-Workflows
 .. _Pandoc: http://pandoc.org/
 .. _Inkscape: https://inkscape.org/en/
-.. _split.sh:
-.. _fetchLinks.sh:
+.. _split.sh: split.sh
+.. _fetchLinks.sh: fetchLinks.sh
 .. _`bare repository`: https://git-scm.com/book/en/v2/Git-on-the-Server-The-Protocols
-.. _hook:
+.. _hook: post-update
