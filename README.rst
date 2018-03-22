@@ -31,7 +31,7 @@ Costs
 Method
 ------
 
-For each product separate git repository is created and maintainer is chosen.
+For each product separate git repository is created and a maintainer is chosen.
 Anyone forks repo, edits and submits pull request to maintainer. Maintainer merges and pushes to build server.
 Build server builds and uploads to webhost.
 
@@ -70,7 +70,7 @@ For each product:
 * permissions for the new user and web server are set up
 * ssh keys are installed: maintainer's public key on the build server and build server's public key on the webhost
 * "bare" branch is checked out
-* git hook_ is created
+* git hook_ is created as .git/hooks/post-update
 
 .. _bare: 
 
@@ -92,6 +92,21 @@ Sphinx will create "html" subdirectory when building, so it seems pretty to add 
 For apache something like this:
 
   Redirect permanent "/productName-doc/index.html" "/productName-doc/html/index.html"
+
+Maintainer
+~~~~~~~~~~
+
+Maintainer only needs to set up a remote in their git client. If using command line:
+
+  git remote add build productName-doc@buildServer:~/.git
+
+Make sure ssh keys are in place.
+
+Now maintaner can use:
+
+  git push build
+
+to build and upload documentation to website.
 
 .. _sphinx: http://www.sphinx-doc.org/en/stable/index.html
 .. _reStructuredText: http://docutils.sourceforge.net/docs/user/rst/quickref.html
